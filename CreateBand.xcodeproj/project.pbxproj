@@ -7,17 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2333201C25191C00FF2311 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A23331F1C25191C00FF2311 /* MainViewController.swift */; };
+		4A2333251C25234000FF2311 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2333241C25234000FF2311 /* UserManager.swift */; };
+		4A2333271C252B0B00FF2311 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2333261C252B0B00FF2311 /* Security.framework */; };
+		4A2333291C252DB500FF2311 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2333281C252DB500FF2311 /* KeychainWrapper.swift */; };
+		4A23332B1C25354F00FF2311 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A23332A1C25354F00FF2311 /* LoginViewController.swift */; };
+		4A23332D1C25386100FF2311 /* UserIdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A23332C1C25386100FF2311 /* UserIdTableViewCell.swift */; };
+		4A23332F1C253FE800FF2311 /* SmsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A23332E1C253FE800FF2311 /* SmsTableViewCell.swift */; };
+		4A2333311C25414900FF2311 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2333301C25414900FF2311 /* LoginTableViewCell.swift */; };
+		4A2333331C25476900FF2311 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2333321C25476900FF2311 /* QuartzCore.framework */; };
 		4AA7CB811C0DF5DC00B35E25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */; };
-		4AA7CB831C0DF5DC00B35E25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA7CB821C0DF5DC00B35E25 /* ViewController.swift */; };
 		4AA7CB861C0DF5DC00B35E25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB841C0DF5DC00B35E25 /* Main.storyboard */; };
 		4AA7CB881C0DF5DC00B35E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */; };
 		4AA7CB8B1C0DF5DC00B35E25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB891C0DF5DC00B35E25 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A23331F1C25191C00FF2311 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4A2333241C25234000FF2311 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		4A2333261C252B0B00FF2311 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4A2333281C252DB500FF2311 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		4A23332A1C25354F00FF2311 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A23332C1C25386100FF2311 /* UserIdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdTableViewCell.swift; sourceTree = "<group>"; };
+		4A23332E1C253FE800FF2311 /* SmsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsTableViewCell.swift; sourceTree = "<group>"; };
+		4A2333301C25414900FF2311 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
+		4A2333321C25476900FF2311 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4AA7CB7D1C0DF5DC00B35E25 /* CreateBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreateBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4AA7CB821C0DF5DC00B35E25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4AA7CB851C0DF5DC00B35E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AA7CB8A1C0DF5DC00B35E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,12 +45,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2333331C25476900FF2311 /* QuartzCore.framework in Frameworks */,
+				4A2333271C252B0B00FF2311 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2333211C251F0400FF2311 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A23332A1C25354F00FF2311 /* LoginViewController.swift */,
+				4A23331F1C25191C00FF2311 /* MainViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4A2333221C251F1D00FF2311 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4AA7CB841C0DF5DC00B35E25 /* Main.storyboard */,
+				4A2333301C25414900FF2311 /* LoginTableViewCell.swift */,
+				4A23332E1C253FE800FF2311 /* SmsTableViewCell.swift */,
+				4A23332C1C25386100FF2311 /* UserIdTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4A2333231C251F4100FF2311 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A2333241C25234000FF2311 /* UserManager.swift */,
+				4A2333281C252DB500FF2311 /* KeychainWrapper.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4AA7CB741C0DF5DC00B35E25 = {
 			isa = PBXGroup;
 			children = (
@@ -55,13 +102,24 @@
 			isa = PBXGroup;
 			children = (
 				4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */,
-				4AA7CB821C0DF5DC00B35E25 /* ViewController.swift */,
-				4AA7CB841C0DF5DC00B35E25 /* Main.storyboard */,
+				4A2333231C251F4100FF2311 /* Models */,
+				4A2333221C251F1D00FF2311 /* Views */,
+				4A2333211C251F0400FF2311 /* Controllers */,
 				4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */,
-				4AA7CB891C0DF5DC00B35E25 /* LaunchScreen.storyboard */,
 				4AA7CB8C1C0DF5DC00B35E25 /* Info.plist */,
+				4AF0B01F1C264ACB00CE042A /* Support Files */,
 			);
 			path = CreateBand;
+			sourceTree = "<group>";
+		};
+		4AF0B01F1C264ACB00CE042A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A2333321C25476900FF2311 /* QuartzCore.framework */,
+				4A2333261C252B0B00FF2311 /* Security.framework */,
+				4AA7CB891C0DF5DC00B35E25 /* LaunchScreen.storyboard */,
+			);
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA7CB831C0DF5DC00B35E25 /* ViewController.swift in Sources */,
+				4A2333251C25234000FF2311 /* UserManager.swift in Sources */,
+				4A2333291C252DB500FF2311 /* KeychainWrapper.swift in Sources */,
+				4A2333201C25191C00FF2311 /* MainViewController.swift in Sources */,
+				4A23332F1C253FE800FF2311 /* SmsTableViewCell.swift in Sources */,
+				4A23332B1C25354F00FF2311 /* LoginViewController.swift in Sources */,
 				4AA7CB811C0DF5DC00B35E25 /* AppDelegate.swift in Sources */,
+				4A23332D1C25386100FF2311 /* UserIdTableViewCell.swift in Sources */,
+				4A2333311C25414900FF2311 /* LoginTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +350,7 @@
 				4AA7CB911C0DF5DC00B35E25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
