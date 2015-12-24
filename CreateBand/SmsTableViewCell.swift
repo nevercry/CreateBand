@@ -12,6 +12,7 @@ class SmsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var requestSMSButton: UIButton!
     @IBOutlet weak var smsTextField: UITextField!
+    @IBOutlet weak var lastCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

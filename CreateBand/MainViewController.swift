@@ -26,10 +26,7 @@ class MainViewController: UIViewController {
             print("no usertoken")
             
             showLogin()
-            
-            
         }
-
     }
     
     

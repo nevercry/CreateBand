@@ -7,6 +7,7 @@
 // 登录页面
 
 import UIKit
+import Alamofire
 
 struct CellIdentifier {
     static let UserIdCellIdentifier = "UserId Cell";
@@ -24,15 +25,19 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    // MARK: ref UserIdTableViewCell
     weak var userIdTextField: UITextField? {
         didSet {
             if userIdTextField != nil {
                 NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: userIdTextField, queue: NSOperationQueue.mainQueue()) { (NSNotification) -> Void in
                     self.checkLoginButtonState()
+                    self.checkSMSRequestButtonState()
                 }
             }
         }
     }
+    
+    // MARK: ref smsTableViewCell
     weak var smsTextField: UITextField? {
         didSet {
             if smsTextField != nil {
@@ -42,7 +47,37 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    weak var requestSMSButton: UIButton?{
+        didSet {
+            checkSMSRequestButtonState()
+        }
+    }
+    weak var lastCountLabel: UILabel?
+    
+    var timeRemaining = 59 {
+        didSet {
+            lastCountLabel?.text = "等待\(timeRemaining)s"
+        }
+    }
+    // MARK: ref LoginTableViewCell
     weak var loginButton: UIButton?
+
+    
+    
+    // MARK: Action
+    
+    func requestLoginSMS(sender: UIButton) {
+        sender.hidden = true
+        lastCountLabel?.hidden = false
+        lastCountLabel?.text = "等待\(timeRemaining)s"
+        let timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateLastCountLabel:", userInfo: nil, repeats: true)
+        timer.fire()
+        // TODO: 调用短信接口
+        print("调用短信接口")
+        
+        NetworkManager.sharedInstance.sendSMS((userIdTextField?.text)!, andSMSType: "Login")
+        
+    }
     
 
     // MARK: Custom Methods
@@ -58,6 +93,27 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else {
             loginButton?.enabled = false
             loginButton?.setBackgroundColor(UIColor(red: 102.0/255, green: 204.0/255, blue: 255.0/255, alpha: 1.0), forState: .Normal)
+        }
+    }
+    
+    func checkSMSRequestButtonState() {
+        let mobiePhoneRex = "^0?(13[0-9]|15[012356789]|17[0678]|18[0-9]|14[57])[0-9]{8}$"
+        if let userId = userIdTextField?.text {
+            requestSMSButton?.enabled = RegexHelper.init(mobiePhoneRex).match(userId)
+            // debug
+//            let result = RegexHelper.init(mobiePhoneRex).match(userId)
+//            print(result)
+        }
+    }
+    
+    func updateLastCountLabel(timer: NSTimer) {
+        if timeRemaining == 0 {
+            timer.invalidate()
+            requestSMSButton?.hidden = false
+            lastCountLabel?.hidden = true
+            timeRemaining = 59
+        } else {
+            timeRemaining--
         }
     }
 
@@ -120,6 +176,9 @@ extension UITableViewCell {
             smsCell.requestSMSButton .addTarget(controller, action: "requestLoginSMS:", forControlEvents: .TouchUpInside)
             smsCell.smsTextField.delegate = controller
             controller.smsTextField = smsCell.smsTextField
+            controller.requestSMSButton = smsCell.requestSMSButton
+            controller.lastCountLabel = smsCell.lastCountLabel
+            
             
         case CellIdentifier.LoginCellIdentifier:
             let loginCell = self as! LoginTableViewCell
@@ -139,4 +198,6 @@ extension UIButton {
         UIGraphicsEndImageContext()
         
         self.setBackgroundImage(colorImage, forState: forState)
-    }}
+    }
+    
+}

@@ -169,6 +169,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等待59s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f98-MB-zIV">
+                                                    <rect key="frame" x="8" y="19" width="85" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="2Ew-hK-55C"/>
+                                                        <constraint firstAttribute="width" constant="85" id="POO-7J-h6S"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pol-b0-51t">
                                                     <rect key="frame" x="8" y="13" width="85" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -181,14 +191,17 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Ev1-Uc-wFn" firstAttribute="leading" secondItem="Pol-b0-51t" secondAttribute="trailing" constant="29" id="3PF-WS-HkI"/>
+                                                <constraint firstItem="f98-MB-zIV" firstAttribute="centerX" secondItem="Pol-b0-51t" secondAttribute="centerX" id="FnZ-Mh-D59"/>
                                                 <constraint firstItem="Ev1-Uc-wFn" firstAttribute="centerY" secondItem="Upg-a3-Mwb" secondAttribute="centerY" id="OrQ-er-soi"/>
+                                                <constraint firstItem="Ev1-Uc-wFn" firstAttribute="leading" secondItem="Pol-b0-51t" secondAttribute="leading" constant="114" id="a2C-Hy-hHn"/>
+                                                <constraint firstItem="f98-MB-zIV" firstAttribute="centerY" secondItem="Pol-b0-51t" secondAttribute="centerY" id="gbZ-06-jjX"/>
                                                 <constraint firstItem="Ev1-Uc-wFn" firstAttribute="trailing" secondItem="Upg-a3-Mwb" secondAttribute="trailingMargin" id="nLB-a8-yDH"/>
                                                 <constraint firstItem="Pol-b0-51t" firstAttribute="centerY" secondItem="Upg-a3-Mwb" secondAttribute="centerY" id="pdC-CN-yfN"/>
                                                 <constraint firstItem="Pol-b0-51t" firstAttribute="leading" secondItem="Upg-a3-Mwb" secondAttribute="leadingMargin" id="wSq-w1-VLA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lastCountLabel" destination="f98-MB-zIV" id="qJk-fR-bkI"/>
                                             <outlet property="requestSMSButton" destination="Pol-b0-51t" id="zzy-WV-TKX"/>
                                             <outlet property="smsTextField" destination="Ev1-Uc-wFn" id="thb-iX-CjJ"/>
                                         </connections>

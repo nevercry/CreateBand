@@ -20,6 +20,9 @@
 		4AA7CB861C0DF5DC00B35E25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB841C0DF5DC00B35E25 /* Main.storyboard */; };
 		4AA7CB881C0DF5DC00B35E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */; };
 		4AA7CB8B1C0DF5DC00B35E25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB891C0DF5DC00B35E25 /* LaunchScreen.storyboard */; };
+		4AB65E831C26C9B700561CB9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB65E821C26C9B700561CB9 /* NetworkManager.swift */; };
+		4AF0F1D91C2A63D60076BC56 /* Certificates.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4AF0F1D81C2A63D60076BC56 /* Certificates.cer */; };
+		7D5751385B46853B24F65EE8 /* Pods_CreateBand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E49D6EF2AA0530B151C18A0C /* Pods_CreateBand.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,11 @@
 		4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AA7CB8A1C0DF5DC00B35E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AA7CB8C1C0DF5DC00B35E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AB65E821C26C9B700561CB9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4AF0F1D81C2A63D60076BC56 /* Certificates.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = Certificates.cer; sourceTree = "<group>"; };
+		776A542CAE1E1BCA62C5D812 /* Pods-CreateBand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreateBand.release.xcconfig"; path = "Pods/Target Support Files/Pods-CreateBand/Pods-CreateBand.release.xcconfig"; sourceTree = "<group>"; };
+		E49D6EF2AA0530B151C18A0C /* Pods_CreateBand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CreateBand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF32C512069BC3B6C66C30A3 /* Pods-CreateBand.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreateBand.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CreateBand/Pods-CreateBand.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			files = (
 				4A2333331C25476900FF2311 /* QuartzCore.framework in Frameworks */,
 				4A2333271C252B0B00FF2311 /* Security.framework in Frameworks */,
+				7D5751385B46853B24F65EE8 /* Pods_CreateBand.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,7 @@
 			children = (
 				4A2333241C25234000FF2311 /* UserManager.swift */,
 				4A2333281C252DB500FF2311 /* KeychainWrapper.swift */,
+				4AB65E821C26C9B700561CB9 /* NetworkManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -87,6 +97,8 @@
 			children = (
 				4AA7CB7F1C0DF5DC00B35E25 /* CreateBand */,
 				4AA7CB7E1C0DF5DC00B35E25 /* Products */,
+				C3D0973C672078CBC49D4F42 /* Pods */,
+				DFD6AB55829DF7276ADF7417 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,7 +118,6 @@
 				4A2333221C251F1D00FF2311 /* Views */,
 				4A2333211C251F0400FF2311 /* Controllers */,
 				4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */,
-				4AA7CB8C1C0DF5DC00B35E25 /* Info.plist */,
 				4AF0B01F1C264ACB00CE042A /* Support Files */,
 			);
 			path = CreateBand;
@@ -115,11 +126,30 @@
 		4AF0B01F1C264ACB00CE042A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				4AF0F1D81C2A63D60076BC56 /* Certificates.cer */,
+				4AA7CB891C0DF5DC00B35E25 /* LaunchScreen.storyboard */,
+				4AA7CB8C1C0DF5DC00B35E25 /* Info.plist */,
 				4A2333321C25476900FF2311 /* QuartzCore.framework */,
 				4A2333261C252B0B00FF2311 /* Security.framework */,
-				4AA7CB891C0DF5DC00B35E25 /* LaunchScreen.storyboard */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		C3D0973C672078CBC49D4F42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF32C512069BC3B6C66C30A3 /* Pods-CreateBand.debug.xcconfig */,
+				776A542CAE1E1BCA62C5D812 /* Pods-CreateBand.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DFD6AB55829DF7276ADF7417 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E49D6EF2AA0530B151C18A0C /* Pods_CreateBand.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AA7CB8F1C0DF5DC00B35E25 /* Build configuration list for PBXNativeTarget "CreateBand" */;
 			buildPhases = (
+				9BD5417398F656DEFF15C3BA /* Check Pods Manifest.lock */,
 				4AA7CB791C0DF5DC00B35E25 /* Sources */,
 				4AA7CB7A1C0DF5DC00B35E25 /* Frameworks */,
 				4AA7CB7B1C0DF5DC00B35E25 /* Resources */,
+				98129A63E1B8B025516F8C52 /* Embed Pods Frameworks */,
+				79A0757F299C5C2E3C04A73C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,17 +215,67 @@
 			files = (
 				4AA7CB8B1C0DF5DC00B35E25 /* LaunchScreen.storyboard in Resources */,
 				4AA7CB881C0DF5DC00B35E25 /* Assets.xcassets in Resources */,
+				4AF0F1D91C2A63D60076BC56 /* Certificates.cer in Resources */,
 				4AA7CB861C0DF5DC00B35E25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		79A0757F299C5C2E3C04A73C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CreateBand/Pods-CreateBand-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98129A63E1B8B025516F8C52 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CreateBand/Pods-CreateBand-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BD5417398F656DEFF15C3BA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4AA7CB791C0DF5DC00B35E25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB65E831C26C9B700561CB9 /* NetworkManager.swift in Sources */,
 				4A2333251C25234000FF2311 /* UserManager.swift in Sources */,
 				4A2333291C252DB500FF2311 /* KeychainWrapper.swift in Sources */,
 				4A2333201C25191C00FF2311 /* MainViewController.swift in Sources */,
@@ -311,6 +394,7 @@
 		};
 		4AA7CB901C0DF5DC00B35E25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF32C512069BC3B6C66C30A3 /* Pods-CreateBand.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CreateBand/Info.plist;
@@ -322,6 +406,7 @@
 		};
 		4AA7CB911C0DF5DC00B35E25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 776A542CAE1E1BCA62C5D812 /* Pods-CreateBand.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CreateBand/Info.plist;

@@ -49,3 +49,25 @@ class UserManager: NSObject {
         }
     }
 }
+
+
+struct RegexHelper {
+    let regex: NSRegularExpression?
+    
+    init(_ pattern: String) {
+        do {
+            regex = try NSRegularExpression.init(pattern: pattern, options: .CaseInsensitive)
+        } catch {
+            print("\(error)")
+            regex = nil
+        }
+    }
+    
+    func match(input: String) -> Bool {
+        if let matches = regex?.matchesInString(input, options: .ReportCompletion, range: NSMakeRange(0, input.characters.count)) {
+            return matches.count > 0
+        } else {
+            return false
+        }
+    }
+}
