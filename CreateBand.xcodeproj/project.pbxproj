@@ -16,6 +16,7 @@
 		4A23332F1C253FE800FF2311 /* SmsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A23332E1C253FE800FF2311 /* SmsTableViewCell.swift */; };
 		4A2333311C25414900FF2311 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2333301C25414900FF2311 /* LoginTableViewCell.swift */; };
 		4A2333331C25476900FF2311 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2333321C25476900FF2311 /* QuartzCore.framework */; };
+		4A4505F31C2D7C2100531365 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4505F21C2D7C2100531365 /* MapKit.framework */; };
 		4AA7CB811C0DF5DC00B35E25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */; };
 		4AA7CB861C0DF5DC00B35E25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB841C0DF5DC00B35E25 /* Main.storyboard */; };
 		4AA7CB881C0DF5DC00B35E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		4A23332E1C253FE800FF2311 /* SmsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsTableViewCell.swift; sourceTree = "<group>"; };
 		4A2333301C25414900FF2311 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		4A2333321C25476900FF2311 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4A4505F21C2D7C2100531365 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4AA7CB7D1C0DF5DC00B35E25 /* CreateBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreateBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AA7CB851C0DF5DC00B35E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4505F31C2D7C2100531365 /* MapKit.framework in Frameworks */,
 				4A2333331C25476900FF2311 /* QuartzCore.framework in Frameworks */,
 				4A2333271C252B0B00FF2311 /* Security.framework in Frameworks */,
 				7D5751385B46853B24F65EE8 /* Pods_CreateBand.framework in Frameworks */,
@@ -156,6 +159,7 @@
 		DFD6AB55829DF7276ADF7417 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A4505F21C2D7C2100531365 /* MapKit.framework */,
 				E49D6EF2AA0530B151C18A0C /* Pods_CreateBand.framework */,
 			);
 			name = Frameworks;

@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--CreateBand-->
+        <!--MainViewController-->
         <scene sceneID="SGP-sm-3gT">
             <objects>
-                <viewController id="bKM-X4-ysO" customClass="MainViewController" customModule="CreateBand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bKM-X4-ysO" userLabel="MainViewController" customClass="MainViewController" customModule="CreateBand" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kxS-wE-Kfd"/>
                         <viewControllerLayoutGuide type="bottom" id="bzk-fn-k89"/>
@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="XrP-44-VJj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZf-Ws-cye">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jZf-Ws-cye" firstAttribute="leading" secondItem="XrP-44-VJj" secondAttribute="leading" id="VpF-Kv-fcv"/>
+                            <constraint firstAttribute="trailing" secondItem="jZf-Ws-cye" secondAttribute="trailing" id="du8-El-jAT"/>
+                            <constraint firstItem="jZf-Ws-cye" firstAttribute="bottom" secondItem="bzk-fn-k89" secondAttribute="top" id="pX0-cP-MK9"/>
+                            <constraint firstItem="jZf-Ws-cye" firstAttribute="top" secondItem="XrP-44-VJj" secondAttribute="top" id="yTe-F4-Rs7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CreateBand" id="xZv-8e-Wym">
                         <barButtonItem key="leftBarButtonItem" image="user_male_circle-50" id="pZP-9O-NCe">
@@ -27,6 +38,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="multiple_choice-50" id="iRb-SE-b09"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="jZf-Ws-cye" id="wTa-1Z-G1s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBP-D8-c9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,11 +184,6 @@
                                                 <constraint firstItem="eeR-Lr-byu" firstAttribute="leading" secondItem="Kef-jV-lD9" secondAttribute="leadingMargin" id="eIF-Ph-eXu"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="16"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="loginButton" destination="eeR-Lr-byu" id="6ex-XB-OB0"/>
                                         </connections>
@@ -202,11 +211,6 @@
                                                 <constraint firstItem="3pp-F7-2pb" firstAttribute="centerY" secondItem="Aaq-DT-yBL" secondAttribute="centerY" id="irh-eo-2bE"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="16"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="registButton" destination="3pp-F7-2pb" id="b7P-KT-7ac"/>
                                         </connections>
@@ -241,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="2786" y="1300"/>
         </scene>
-        <!--注册帐号-->
+        <!--RegistViewController-->
         <scene sceneID="skm-f3-P6j">
             <objects>
-                <viewController storyboardIdentifier="RegistViewController" id="pbG-9i-XGx" customClass="RegistViewController" customModule="CreateBand" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistViewController" id="pbG-9i-XGx" userLabel="RegistViewController" customClass="RegistViewController" customModule="CreateBand" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aby-Uy-JeV"/>
                         <viewControllerLayoutGuide type="bottom" id="Gpq-28-cYF"/>
@@ -393,11 +397,6 @@
                                                 <constraint firstItem="Wp4-et-Q3u" firstAttribute="leading" secondItem="lYu-Kj-GpW" secondAttribute="leadingMargin" id="ysi-jI-Ash"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="16"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="loginButton" destination="Wp4-et-Q3u" id="dac-Qc-Ayf"/>
                                         </connections>
