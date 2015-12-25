@@ -8,14 +8,15 @@
 
 import UIKit
 import Alamofire
+import MBProgressHUD
 
-struct CellIdentifier {
-    static let UserIdCellIdentifier = "UserId Cell";
-    static let SMSCellIdentifier = "SMS Cell";
-    static let LoginCellIdentifier = "Login Cell";
-}
+
 
 class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate {
+    
+    struct Constants {
+        static let ShowRegistSegue = "Show Regist"
+    }
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -47,41 +48,84 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    
     weak var requestSMSButton: UIButton?{
         didSet {
             checkSMSRequestButtonState()
         }
     }
-    weak var lastCountLabel: UILabel?
     
-    var timeRemaining = 59 {
-        didSet {
-            lastCountLabel?.text = "等待\(timeRemaining)s"
-        }
-    }
     // MARK: ref LoginTableViewCell
     weak var loginButton: UIButton?
-
     
-    
-    // MARK: Action
-    
-    func requestLoginSMS(sender: UIButton) {
-        sender.hidden = true
-        lastCountLabel?.hidden = false
-        lastCountLabel?.text = "等待\(timeRemaining)s"
-        let timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateLastCountLabel:", userInfo: nil, repeats: true)
-        timer.fire()
-        // TODO: 调用短信接口
-        print("调用短信接口")
-        
-        NetworkManager.sharedInstance.sendSMS((userIdTextField?.text)!, andSMSType: "Login")
-        
+    // 取消注册通知
+    deinit {
+        if let obersver = smsTextField {
+            NSNotificationCenter.defaultCenter().removeObserver(obersver)
+        }
+        if let obersver = userIdTextField {
+            NSNotificationCenter.defaultCenter().removeObserver(obersver)
+        }
     }
     
-
-    // MARK: Custom Methods
     
+    // MARK: - Actions
+    // MARK: 登录
+    func login(sender: UIButton) {
+        // 检查验证码是否是4位数
+        if smsTextField?.text?.characters.count != 4 {
+            let alertTitle = "验证码不足4位"
+            let alertMessage = "请重新输入"
+            self.alertViewShow(alertTitle, andMessage: alertMessage)
+            return
+        }
+        
+        // 调用登录接口
+        let parameters = ["mobile":userIdTextField!.text!,"verify_code":smsTextField!.text!]
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        NetworkManager.sharedInstance.login(parameters) { (resp) in
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            if let error = resp.result.error {
+                self.alertViewShow("error", andMessage: "请求失败 \(error)")
+            } else {
+                UserManager.sharedInstance.userId = self.userIdTextField!.text!
+                let JSON = resp.result.value as! [String:String]
+                UserManager.sharedInstance.token = JSON["token"]
+                
+                // 登录成功
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+    }
+    
+    // MARK: - 获取登录验证码
+    func requestLoginSMS(sender: UIButton) {
+        // debug
+        // print("调用短信接口")
+        let parameters = ["mobile":userIdTextField!.text!,"smsType":"Login"]
+        
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        NetworkManager.sharedInstance.sendSMS(parameters) { (resp) -> Void in
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            if let error = resp.result.error {
+                self.alertViewShow("error", andMessage: "请求失败 \(error)")
+            }
+        }
+    }
+    
+    // MARK: - 注册进入注册界面
+    func regist(sender: UIButton) {
+        self.performSegueWithIdentifier(Constants.ShowRegistSegue, sender: sender)
+    }
+    
+    // MARK: - Unwind Segue
+    // 注册成功回调
+    @IBAction func sucessuRegist(sender: UIStoryboardSegue) {
+        self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
+    // MARK: - Custom Methods
+
     @IBAction func hideKeyboard(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
@@ -97,37 +141,32 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func checkSMSRequestButtonState() {
-        let mobiePhoneRex = "^0?(13[0-9]|15[012356789]|17[0678]|18[0-9]|14[57])[0-9]{8}$"
         if let userId = userIdTextField?.text {
-            requestSMSButton?.enabled = RegexHelper.init(mobiePhoneRex).match(userId)
-            // debug
-//            let result = RegexHelper.init(mobiePhoneRex).match(userId)
-//            print(result)
+            requestSMSButton?.enabled = self.isValidMobile(userId)
         }
     }
-    
-    func updateLastCountLabel(timer: NSTimer) {
-        if timeRemaining == 0 {
-            timer.invalidate()
-            requestSMSButton?.hidden = false
-            lastCountLabel?.hidden = true
-            timeRemaining = 59
-        } else {
-            timeRemaining--
-        }
-    }
-
     
     
     // MARK: UITextFieldDelegate 
     // Cell里面的TextField delegate
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        // 验证码限制在4位数
+        if textField == smsTextField {
+            if textField.text?.characters.count > 3 && string != "" {
+                return false
+            }
+        }
+        
+        return true
+    }
     
     
     
     // MARK: UITable View DataSource and Delegate 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -146,58 +185,50 @@ class LoginViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cellIdentifier = CellIdentifier.SMSCellIdentifier
         case 2:
             cellIdentifier = CellIdentifier.LoginCellIdentifier
+        case 3:
+            cellIdentifier = CellIdentifier.RegistCellIdentfier
         default:
             cellIdentifier = "UnKownCellId"
         }
         
         tableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
-        tableViewCell.setUpWithIdentifier(cellIdentifier, forIndexPath: indexPath, andController: self)
+        self.setUpWithIdentifier(cellIdentifier, forIndexPath: indexPath, andCell: tableViewCell)
         
         
         return tableViewCell
     }
-}
-
-
-extension UITableViewCell {
     
-    func setUpWithIdentifier(identifier: String, forIndexPath indexPath: NSIndexPath, andController controller: LoginViewController) {
+    func setUpWithIdentifier(identifier: String, forIndexPath indexPath: NSIndexPath, andCell cell: UITableViewCell) {
         
         switch identifier {
         case CellIdentifier.UserIdCellIdentifier:
-            let userIdCell = self as! UserIdTableViewCell
-            userIdCell.userIdTextField.delegate = controller
-            controller.userIdTextField = userIdCell.userIdTextField
+            let userIdCell = cell  as! UserIdTableViewCell
+            userIdCell.userIdTextField.delegate = self
+            self.userIdTextField = userIdCell.userIdTextField
+            // 检查UserDefault里面是否有上次登录的用户ID
+            if let userId = UserManager.sharedInstance.userId {
+                userIdCell.userIdTextField.text = userId
+            }
             
-        
         case CellIdentifier.SMSCellIdentifier:
-            let smsCell = self as! SmsTableViewCell
-            smsCell.requestSMSButton .addTarget(controller, action: "requestLoginSMS:", forControlEvents: .TouchUpInside)
-            smsCell.smsTextField.delegate = controller
-            controller.smsTextField = smsCell.smsTextField
-            controller.requestSMSButton = smsCell.requestSMSButton
-            controller.lastCountLabel = smsCell.lastCountLabel
-            
+            let smsCell = cell as! SmsTableViewCell
+            smsCell.requestSMSButton .addTarget(self, action: "requestLoginSMS:", forControlEvents: .TouchUpInside)
+            smsCell.smsTextField.delegate = self
+            self.smsTextField = smsCell.smsTextField
+            self.requestSMSButton = smsCell.requestSMSButton
             
         case CellIdentifier.LoginCellIdentifier:
-            let loginCell = self as! LoginTableViewCell
-            loginCell.loginButton .addTarget(controller, action: "login:", forControlEvents: .TouchUpInside)
-            controller.loginButton = loginCell.loginButton
+            let loginCell = cell as! LoginTableViewCell
+            loginCell.loginButton .addTarget(self, action: "login:", forControlEvents: .TouchUpInside)
+            self.loginButton = loginCell.loginButton
+            
+        case CellIdentifier.RegistCellIdentfier:
+            let registCell = cell as! RegistTableViewCell
+            registCell.registButton .addTarget(self, action: "regist:", forControlEvents: .TouchUpInside)
         default: break
         }
     }
 }
 
-extension UIButton {
-    func setBackgroundColor(color: UIColor, forState: UIControlState) {
-        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-        CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), color.CGColor)
-        CGContextFillRect(UIGraphicsGetCurrentContext(), CGRect(x: 0, y: 0, width: 1, height: 1))
-        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        self.setBackgroundImage(colorImage, forState: forState)
-    }
-    
-}
+

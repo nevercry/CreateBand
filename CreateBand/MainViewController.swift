@@ -8,11 +8,13 @@
 
 import UIKit
 
-struct Constant {
-    static let LoginViewControllerIdentifier = "LoginViewController"
-}
+
 
 class MainViewController: UIViewController {
+    
+    struct Constant {
+        static let LoginViewControllerIdentifier = "LoginViewController"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,22 @@ class MainViewController: UIViewController {
         }
     }
     
+    // MARK: Actions
+    @IBAction func accountInfo(sender: AnyObject) {
+        let alertC = UIAlertController.init(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let actionAccountInfo = UIAlertAction.init(title: "帐户信息", style: .Default, handler: nil)
+        let actionAccountLogout = UIAlertAction.init(title: "退出", style: .Destructive) { (action) in
+            UserManager.sharedInstance.token = nil // 清空token
+            self.showLogin()
+        }
+        let actionCancel = UIAlertAction.init(title: "取消", style: .Cancel, handler: nil)
+        
+        alertC.addAction(actionAccountInfo)
+        alertC.addAction(actionAccountLogout)
+        alertC.addAction(actionCancel)
+        
+        self.presentViewController(alertC, animated: true, completion: nil)
+    }
     
     // MARK: Custom Methods 
     

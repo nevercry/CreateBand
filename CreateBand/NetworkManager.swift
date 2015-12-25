@@ -11,6 +11,16 @@ import Alamofire
 
 class NetworkManager {
     
+    struct Domain {
+        static let headers = ["Content-Type":"application/x-www-form-urlencoded; charset=utf-8"]
+        static let host = "https://nevercryair.local/createband/"
+        static let sendSMS = host + "sendSMS.php"
+        static let login =  host + "login.php"
+        static let regist = host + "regist.php"
+    }
+    
+    
+    
     class var sharedInstance: NetworkManager {
         struct Singleton {
             static let instance: NetworkManager = NetworkManager()
@@ -51,10 +61,6 @@ class NetworkManager {
                             SecTrustSetAnchorCertificatesOnly(serverTrust, false) // also allow regular CAs.
                         }
                     }
-                    
-                    
-                    
-                    
                     
 //                    let certificates = NSMutableArray()
 //                    
@@ -102,28 +108,59 @@ class NetworkManager {
         }
     }
     
-    func sendSMS(mobile: String, andSMSType smsType: String) {
-        
+    // MARK: Debug Print 
+    
+    func debugPrintsResut(response: Response<AnyObject, NSError>) {
+        debugPrint(response)
+        // debug
+        print(response.request)  // original URL request
+        print(response.response) // URL response
+        print(NSString(data: response.data!, encoding: NSUTF8StringEncoding))     // server data
+        print(response.result)   // result of response serialization
        
         
-//        // GET
-//          NetworkManager.sharedInstance.manager!.request(.GET, "http://nevercryair.local/createband/sendSMS.php?mobile=\(mobile)&smsType=\(smsType)").responseData({ (resp) -> Void in
-//            let string = String.init(data: resp.data!, encoding: NSUTF8StringEncoding)
-//            
-//            print("Test Respoinse is \(string)")
-//        })
+        if let JSON = response.result.value {
+            print("JSON: \(JSON)")
+        }
         
-        let parameters = ["mobile":mobile,"smsType":smsType]
         
-        NetworkManager.sharedInstance.manager!.request(.POST, "https://nevercryair.local/createband/sendSMS.php", parameters: parameters, encoding: .URLEncodedInURL, headers: ["Content-Type":"application/x-www-form-urlencoded; charset=utf-8"]).responseData({ (resp) -> Void in
-            let string = String.init(data: resp.data!, encoding: NSUTF8StringEncoding)
-            
-            print("Test Respoinse is \(string)")
-        })
-        
-        return
     }
     
+    // MARK: - API
+    // MARK: 获取验证码
+    // parameters: ["mobile":"输入手机号码“,"smsType":"Login"/*登录*/|"Regist"/*注册*/]
+    
+    func sendSMS(parameters:[String:String], completionHandler:(Response<String, NSError>)->Void) {
+        
+        NetworkManager.sharedInstance.manager!.request(.POST, Domain.sendSMS, parameters: parameters, encoding: .URLEncodedInURL, headers: Domain.headers).validate().responseString(encoding: NSUTF8StringEncoding) { response in
+            
+            // debug
+            debugPrint(response)
+            print("Response String: \(response.result.value)")
+            completionHandler(response)
+        }
+    }
+    
+    // MARK: 注册
+    // parameters: ["mobile":"输入手机号码“,"verify_code":"输入4位验证码","username":"输入用户名6-20位字母数字组合"]
+    func regist(parameters:[String:String], completionHandler:(Response<AnyObject, NSError>)->Void) {
+        NetworkManager.sharedInstance.manager!.request(.POST, Domain.regist, parameters: parameters, encoding: .URLEncodedInURL, headers: Domain.headers).validate().responseJSON { response in
+            // debug
+            self.debugPrintsResut(response)
+            completionHandler(response)
+        }
+    }
+    
+    // MARK: 登录
+    // parameters: ["mobile":"输入手机号码“,"verify_code":"输入4位验证码"]
+    func login(parameters:[String:String], completionHandler:(Response<AnyObject, NSError>)->Void) {
+        NetworkManager.sharedInstance.manager!.request(.POST, Domain.login, parameters: parameters, encoding: .URLEncodedInURL, headers: Domain.headers).validate().responseJSON { response in
+            // debug
+            self.debugPrintsResut(response)
+            completionHandler(response)
+        }
+    }
+
 }
 
 

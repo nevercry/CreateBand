@@ -11,7 +11,7 @@ import Foundation
 
 let CreatebandUserId = "CreatebandUserId"
 
-class UserManager: NSObject {
+class UserManager {
     static let sharedInstance = UserManager()
     
     var userId: String? {
@@ -23,9 +23,7 @@ class UserManager: NSObject {
             }
         }
         
-        set {
-            self.userId = newValue
-            
+        set (newValue)  {
             NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: CreatebandUserId)
             NSUserDefaults.standardUserDefaults().synchronize()
         }
@@ -43,9 +41,12 @@ class UserManager: NSObject {
             }
         }
         
-        set {
-            self.token = newValue
-            KeychainWrapper.setString(self.token!, forKey: self.userId!)
+        set (newValue) {
+            if newValue != nil {
+                KeychainWrapper.setString(newValue!, forKey: self.userId!)
+            } else {
+                KeychainWrapper.removeObjectForKey(self.userId!)
+            }
         }
     }
 }
