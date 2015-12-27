@@ -21,9 +21,18 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jZf-Ws-cye">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2No-3W-mSs">
+                                <rect key="frame" x="20" y="516" width="64" height="64"/>
+                                <state key="normal" image="user_Location"/>
+                                <connections>
+                                    <action selector="backToUserLocation:" destination="bKM-X4-ysO" eventType="touchUpInside" id="Q4v-yq-KtK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="2No-3W-mSs" secondAttribute="leading" id="7mP-uN-E6o"/>
+                            <constraint firstItem="bzk-fn-k89" firstAttribute="top" secondItem="2No-3W-mSs" secondAttribute="bottom" constant="20" id="RQT-qn-61P"/>
                             <constraint firstItem="jZf-Ws-cye" firstAttribute="leading" secondItem="XrP-44-VJj" secondAttribute="leading" id="VpF-Kv-fcv"/>
                             <constraint firstAttribute="trailing" secondItem="jZf-Ws-cye" secondAttribute="trailing" id="du8-El-jAT"/>
                             <constraint firstItem="jZf-Ws-cye" firstAttribute="bottom" secondItem="bzk-fn-k89" secondAttribute="top" id="pX0-cP-MK9"/>
@@ -40,6 +49,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="jZf-Ws-cye" id="wTa-1Z-G1s"/>
+                        <outlet property="userLocationButton" destination="2No-3W-mSs" id="eqZ-XD-eTa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBP-D8-c9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -479,6 +489,7 @@
     </scenes>
     <resources>
         <image name="multiple_choice-50" width="25" height="25"/>
+        <image name="user_Location" width="64" height="64"/>
         <image name="user_male_circle-50" width="25" height="25"/>
     </resources>
 </document>

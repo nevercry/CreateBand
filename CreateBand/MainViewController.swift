@@ -23,6 +23,9 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     lazy var locationManager = CLLocationManager()
+    
+    @IBOutlet weak var userLocationButton: UIButton!
+    
 
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -69,6 +72,15 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
         self.presentViewController(alertC, animated: true, completion: nil)
     }
+    
+    @IBAction func backToUserLocation(sender: UIButton) {
+        let userLocation = mapView.userLocation
+        
+        if let coord = userLocation.location {
+            mapView.setCenterCoordinate(coord.coordinate, animated: true)
+        }
+    }
+    
     
     // MARK: Custom Methods 
     func startLocationUpdate() {
