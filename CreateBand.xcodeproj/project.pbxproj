@@ -17,6 +17,9 @@
 		4A2333311C25414900FF2311 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2333301C25414900FF2311 /* LoginTableViewCell.swift */; };
 		4A2333331C25476900FF2311 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2333321C25476900FF2311 /* QuartzCore.framework */; };
 		4A4505F31C2D7C2100531365 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4505F21C2D7C2100531365 /* MapKit.framework */; };
+		4A4505F51C31362200531365 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4505F41C31362200531365 /* CustomAnnotation.swift */; };
+		4A4505F71C3153E200531365 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4505F61C3153E200531365 /* AccountInfoViewController.swift */; };
+		4A4505F91C36A26200531365 /* UserStyleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4505F81C36A26200531365 /* UserStyleInfoViewController.swift */; };
 		4AA7CB811C0DF5DC00B35E25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */; };
 		4AA7CB861C0DF5DC00B35E25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB841C0DF5DC00B35E25 /* Main.storyboard */; };
 		4AA7CB881C0DF5DC00B35E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 		4A2333301C25414900FF2311 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		4A2333321C25476900FF2311 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4A4505F21C2D7C2100531365 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4A4505F41C31362200531365 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		4A4505F61C3153E200531365 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
+		4A4505F81C36A26200531365 /* UserStyleInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStyleInfoViewController.swift; sourceTree = "<group>"; };
 		4AA7CB7D1C0DF5DC00B35E25 /* CreateBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreateBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AA7CB851C0DF5DC00B35E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 				4AF0F1DC1C2D2A320076BC56 /* RegistViewController.swift */,
 				4A23332A1C25354F00FF2311 /* LoginViewController.swift */,
 				4A23331F1C25191C00FF2311 /* MainViewController.swift */,
+				4A4505F61C3153E200531365 /* AccountInfoViewController.swift */,
+				4A4505F81C36A26200531365 /* UserStyleInfoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -89,6 +97,7 @@
 				4A2333301C25414900FF2311 /* LoginTableViewCell.swift */,
 				4A23332E1C253FE800FF2311 /* SmsTableViewCell.swift */,
 				4A23332C1C25386100FF2311 /* UserIdTableViewCell.swift */,
+				4A4505F41C31362200531365 /* CustomAnnotation.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 				TargetAttributes = {
 					4AA7CB7C1C0DF5DC00B35E25 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = L8463XAM23;
 					};
 				};
 			};
@@ -291,14 +301,17 @@
 				4AB65E831C26C9B700561CB9 /* NetworkManager.swift in Sources */,
 				4AF0F1DF1C2D47D90076BC56 /* HelpMethods.swift in Sources */,
 				4A2333251C25234000FF2311 /* UserManager.swift in Sources */,
+				4A4505F51C31362200531365 /* CustomAnnotation.swift in Sources */,
 				4A2333291C252DB500FF2311 /* KeychainWrapper.swift in Sources */,
 				4A2333201C25191C00FF2311 /* MainViewController.swift in Sources */,
 				4A23332F1C253FE800FF2311 /* SmsTableViewCell.swift in Sources */,
 				4A23332B1C25354F00FF2311 /* LoginViewController.swift in Sources */,
 				4AA7CB811C0DF5DC00B35E25 /* AppDelegate.swift in Sources */,
 				4A23332D1C25386100FF2311 /* UserIdTableViewCell.swift in Sources */,
+				4A4505F71C3153E200531365 /* AccountInfoViewController.swift in Sources */,
 				4AF0F1DD1C2D2A320076BC56 /* RegistViewController.swift in Sources */,
 				4A2333311C25414900FF2311 /* LoginTableViewCell.swift in Sources */,
+				4A4505F91C36A26200531365 /* UserStyleInfoViewController.swift in Sources */,
 				4AF0F1DB1C2D24FF0076BC56 /* RegistTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,10 +426,13 @@
 			baseConfigurationReference = FF32C512069BC3B6C66C30A3 /* Pods-CreateBand.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CreateBand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nevercry.CreateBand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -425,10 +441,13 @@
 			baseConfigurationReference = 776A542CAE1E1BCA62C5D812 /* Pods-CreateBand.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CreateBand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nevercry.CreateBand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

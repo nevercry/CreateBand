@@ -22,20 +22,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2No-3W-mSs">
-                                <rect key="frame" x="20" y="516" width="64" height="64"/>
+                                <rect key="frame" x="0.0" y="516" width="64" height="64"/>
                                 <state key="normal" image="user_Location"/>
                                 <connections>
                                     <action selector="backToUserLocation:" destination="bKM-X4-ysO" eventType="touchUpInside" id="Q4v-yq-KtK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aP-4C-1Sg">
+                                <rect key="frame" x="490" y="533" width="90" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="X9f-Rb-a7z"/>
+                                    <constraint firstAttribute="height" constant="30" id="i6M-im-SQK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="组建乐队">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="2No-3W-mSs" secondAttribute="leading" id="7mP-uN-E6o"/>
-                            <constraint firstItem="bzk-fn-k89" firstAttribute="top" secondItem="2No-3W-mSs" secondAttribute="bottom" constant="20" id="RQT-qn-61P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6aP-4C-1Sg" secondAttribute="trailing" id="Q1o-TO-gt6"/>
                             <constraint firstItem="jZf-Ws-cye" firstAttribute="leading" secondItem="XrP-44-VJj" secondAttribute="leading" id="VpF-Kv-fcv"/>
+                            <constraint firstItem="2No-3W-mSs" firstAttribute="leading" secondItem="XrP-44-VJj" secondAttribute="leadingMargin" constant="-20" id="aB4-MN-1eI"/>
                             <constraint firstAttribute="trailing" secondItem="jZf-Ws-cye" secondAttribute="trailing" id="du8-El-jAT"/>
+                            <constraint firstItem="bzk-fn-k89" firstAttribute="top" secondItem="2No-3W-mSs" secondAttribute="bottom" constant="20" id="eEz-6R-s56"/>
                             <constraint firstItem="jZf-Ws-cye" firstAttribute="bottom" secondItem="bzk-fn-k89" secondAttribute="top" id="pX0-cP-MK9"/>
+                            <constraint firstItem="bzk-fn-k89" firstAttribute="top" secondItem="6aP-4C-1Sg" secondAttribute="bottom" constant="37" id="qr1-sq-sf6"/>
                             <constraint firstItem="jZf-Ws-cye" firstAttribute="top" secondItem="XrP-44-VJj" secondAttribute="top" id="yTe-F4-Rs7"/>
                         </constraints>
                     </view>
@@ -48,6 +62,7 @@
                         <barButtonItem key="rightBarButtonItem" image="multiple_choice-50" id="iRb-SE-b09"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="createbandButton" destination="6aP-4C-1Sg" id="ozm-Vm-Oln"/>
                         <outlet property="mapView" destination="jZf-Ws-cye" id="wTa-1Z-G1s"/>
                         <outlet property="userLocationButton" destination="2No-3W-mSs" id="eqZ-XD-eTa"/>
                     </connections>
@@ -467,6 +482,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dT5-Wi-ATu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1974" y="472"/>
+        </scene>
+        <!--Account Info View Controller-->
+        <scene sceneID="ii2-0O-hHB">
+            <objects>
+                <viewController id="TAi-5s-7hh" customClass="AccountInfoViewController" customModule="CreateBand" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oud-X4-kpc"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Yf-7Q-AGY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E1O-bI-IEn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGz-gY-JGm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="aVx-4Y-a2J">
+                                <rect key="frame" x="288" y="543" width="23" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.68617046650000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Yf-7Q-AGY" firstAttribute="top" secondItem="NGz-gY-JGm" secondAttribute="bottom" id="Aa3-cq-8qs"/>
+                            <constraint firstItem="NGz-gY-JGm" firstAttribute="leading" secondItem="E1O-bI-IEn" secondAttribute="leading" id="KLA-Su-nwh"/>
+                            <constraint firstItem="3Yf-7Q-AGY" firstAttribute="top" secondItem="aVx-4Y-a2J" secondAttribute="bottom" constant="20" id="N6N-Ns-o5A"/>
+                            <constraint firstAttribute="trailing" secondItem="NGz-gY-JGm" secondAttribute="trailing" id="VaE-7d-tEz"/>
+                            <constraint firstItem="aVx-4Y-a2J" firstAttribute="centerX" secondItem="E1O-bI-IEn" secondAttribute="centerX" id="ZWh-ta-RJ4"/>
+                            <constraint firstItem="NGz-gY-JGm" firstAttribute="top" secondItem="E1O-bI-IEn" secondAttribute="topMargin" id="bwR-9e-VcW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="aVx-4Y-a2J" id="Mvh-X0-UfY"/>
+                        <outlet property="scrollView" destination="NGz-gY-JGm" id="FDv-w9-gCj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYj-SR-QEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3533" y="472"/>
+        </scene>
+        <!--User Style Info View Controller-->
+        <scene sceneID="Q4O-9V-zhc">
+            <objects>
+                <viewController id="qyh-XB-A86" customClass="UserStyleInfoViewController" customModule="CreateBand" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nE4-Hy-7mn"/>
+                        <viewControllerLayoutGuide type="bottom" id="X7v-TO-3vt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Urg-PA-U4S">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="属性设置：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sim-0P-A1S">
+                                <rect key="frame" x="20" y="20" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVg-AP-T9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4231" y="472"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PnK-o4-ZSI">

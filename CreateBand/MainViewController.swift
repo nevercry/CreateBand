@@ -26,6 +26,11 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     @IBOutlet weak var userLocationButton: UIButton!
     
+    var userLocationFirstLoad = true
+    
+    @IBOutlet weak var createbandButton: UIButton!
+    
+    
 
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -114,8 +119,42 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     // MARK: - MKMapViewDelegate
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500)
-        mapView.setRegion(region, animated: true)
+        if userLocationFirstLoad {
+            let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500)
+            mapView.setRegion(region, animated: true)
+            userLocationFirstLoad = false
+        }
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        // This is false if its a user pin
+        if(annotation.isKindOfClass(CustomAnnotation) == false)
+        {
+            let userPin = "userLocation"
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(userPin)
+            {
+                return dequeuedView
+            } else
+            {
+                let mkAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: userPin)
+                if let headImageURL =  UserManager.sharedInstance.headImage {
+                    // TODO: 用SDWebimageView 下载用户头像
+                    
+                } else {
+                    // 载入默认头像
+                    mkAnnotationView.image = UIImage(named: "default_header")
+                }
+                
+                
+                let offset:CGPoint = CGPoint(x: 0, y: -mkAnnotationView.image!.size.height / 2)
+                mkAnnotationView.centerOffset = offset
+                
+                return mkAnnotationView
+            }
+        }
+        
+        return MKAnnotationView()
+        
     }
     
     // MARK: - CLLocationManagerDelegate 

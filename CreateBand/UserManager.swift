@@ -49,6 +49,8 @@ class UserManager {
             }
         }
     }
+    
+    var headImage: String?
 }
 
 
