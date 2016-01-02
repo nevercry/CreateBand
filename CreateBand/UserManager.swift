@@ -11,6 +11,29 @@ import Foundation
 
 let CreatebandUserId = "CreatebandUserId"
 
+enum UserType {
+    case School
+    case Freelance
+}
+
+enum MusicStyle: Int {
+    case Pop = 1
+    case Rock
+    case Folk
+    case Ponk
+    case Metal
+    case Hardcore
+    case Britpop
+    case Blues
+    case PostRock
+    case Reggae
+    case Jazz
+    case Rap
+    case Jpop
+    case Gothic
+    case Light
+}
+
 class UserManager {
     static let sharedInstance = UserManager()
     
