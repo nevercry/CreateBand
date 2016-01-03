@@ -12,6 +12,7 @@ class AccountInfoViewController: UIViewController, UITableViewDelegate,UITableVi
     
     struct Constants {
         static let UserStyleInfoViewControolerIdentifier = "UserStyleInfoViewController"
+        static let CompleteInfoIdentifier = "Complete Info"
     }
     
 
@@ -77,7 +78,12 @@ class AccountInfoViewController: UIViewController, UITableViewDelegate,UITableVi
         
     }
     
+    // 提交用户信息
     func submitUserInfo() {
+        // TODO: 先写的测试 需要重写
+        UserManager.sharedInstance.role = selectedRole
+        
+        performSegueWithIdentifier(Constants.CompleteInfoIdentifier, sender: nil)
         
     }
     
@@ -86,6 +92,8 @@ class AccountInfoViewController: UIViewController, UITableViewDelegate,UITableVi
     @IBAction func cancel(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
     
     
     // MARK: UITableView Delegate and DataSource

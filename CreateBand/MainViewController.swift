@@ -99,9 +99,14 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         
     }
     
+    @IBAction func rewindCompleteInfo(sender: UIStoryboardSegue) {
+        
+        
+    }
     
     
-    // MARK: Custom Methods 
+    
+    // MARK: Custom Methods
     func startLocationUpdate() {
         // 获取应用位置授权状态
         let authStatus = CLLocationManager.authorizationStatus()
@@ -147,18 +152,19 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             let userPin = "userLocation"
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(userPin)
             {
+                dequeuedView.image = UIImage(named: UserManager.sharedInstance.roleImage())
                 return dequeuedView
             } else
             {
                 let mkAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: userPin)
-                if let headImageURL =  UserManager.sharedInstance.headImage {
-                    // TODO: 用SDWebimageView 下载用户头像
-                    
-                } else {
-                    // 载入默认头像
-                    mkAnnotationView.image = UIImage(named: "default_header")
-                }
                 
+                let imagePath = UserManager.sharedInstance.roleImage()
+                
+                mkAnnotationView.image = UIImage.init(named: imagePath)
+                mkAnnotationView.cornerRadius(mkAnnotationView.image!.size.width/2)
+                mkAnnotationView.clipsToBounds = true
+                mkAnnotationView.bordeWidth(1)
+                mkAnnotationView.bordeColor(UIColor.blackColor())
                 
                 let offset:CGPoint = CGPoint(x: 0, y: -mkAnnotationView.image!.size.height / 2)
                 mkAnnotationView.centerOffset = offset

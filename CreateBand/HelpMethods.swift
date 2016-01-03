@@ -46,3 +46,20 @@ extension UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
+
+extension UIView {
+    func cornerRadius(radius: CGFloat) {
+        self.layer.cornerRadius = radius
+    }
+    
+    func bordeColor(color: UIColor) {
+        self.layer.borderColor = color.CGColor
+    }
+    
+    func bordeWidth(width: CGFloat) {
+        self.layer.borderWidth = width
+    }
+}
+
+
+

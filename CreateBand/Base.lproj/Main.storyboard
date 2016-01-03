@@ -528,11 +528,13 @@
                     <connections>
                         <outlet property="pageControl" destination="aVx-4Y-a2J" id="Mvh-X0-UfY"/>
                         <outlet property="scrollView" destination="NGz-gY-JGm" id="FDv-w9-gCj"/>
+                        <segue destination="qJX-lZ-aaN" kind="unwind" identifier="Complete Info" unwindAction="rewindCompleteInfo:" id="cKJ-GN-eWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYj-SR-QEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qJX-lZ-aaN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4309" y="-442"/>
+            <point key="canvasLocation" x="4363" y="-393"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PnK-o4-ZSI">

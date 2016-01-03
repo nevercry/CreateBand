@@ -104,10 +104,40 @@ class UserManager {
         }
     }
     
-    var headImage: String?
+    var role: UserRole?
+    
+    
     
     // TODO: 需要后端建表
     var isCompleteInfo = false
+    
+    func roleImage() -> String {
+        var imagePath: String
+        
+        if let _role = role {
+            switch _role {
+            case .LeadGuitar:
+                imagePath = "Guitarist"
+            case .RhythmGuitar:
+                imagePath = "Guitarist"
+            case .Bassist:
+                imagePath = "Bassist"
+            case .Drummer:
+                imagePath = "Drummer"
+            case .Keyboardist:
+                imagePath = "Keyboardist"
+            case .Turntablist:
+                imagePath = "Turntablist"
+            case .LeadVocalist:
+                imagePath = "Vocalist"
+            }
+        } else {
+            imagePath = "default_header"
+        }
+        
+        return imagePath
+    }
+    
 }
 
 
