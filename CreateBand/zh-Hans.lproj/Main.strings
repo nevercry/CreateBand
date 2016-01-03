@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "手机号"; ObjectID = "3ht-Fa-8K6"; */
+"3ht-Fa-8K6.text" = "手机号";
+
+/* Class = "UIButton"; normalTitle = "注册帐号"; ObjectID = "3pp-F7-2pb"; */
+"3pp-F7-2pb.normalTitle" = "注册帐号";
+
+/* Class = "UITextField"; placeholder = "请填写手机号"; ObjectID = "5n0-Vc-U0o"; */
+"5n0-Vc-U0o.placeholder" = "请填写手机号";
+
+/* Class = "UIButton"; normalTitle = "组建乐队"; ObjectID = "6aP-4C-1Sg"; */
+"6aP-4C-1Sg.normalTitle" = "组建乐队";
+
+/* Class = "UIButton"; normalTitle = "获取验证码"; ObjectID = "DbT-3r-yZL"; */
+"DbT-3r-yZL.normalTitle" = "获取验证码";
+
+/* Class = "UINavigationItem"; title = "资料完善"; ObjectID = "Dvw-Zm-4PO"; */
+"Dvw-Zm-4PO.title" = "资料完善";
+
+/* Class = "UITextField"; placeholder = "请输入验证码"; ObjectID = "Ev1-Uc-wFn"; */
+"Ev1-Uc-wFn.placeholder" = "请输入验证码";
+
+/* Class = "UITextField"; placeholder = "请填写手机号"; ObjectID = "OCl-mS-lLF"; */
+"OCl-mS-lLF.placeholder" = "请填写手机号";
+
+/* Class = "UIButton"; normalTitle = "获取验证码"; ObjectID = "Pol-b0-51t"; */
+"Pol-b0-51t.normalTitle" = "获取验证码";
+
+/* Class = "UILabel"; text = "Welcom to Createband"; ObjectID = "Qbd-bn-yVs"; */
+"Qbd-bn-yVs.text" = "Welcom to Createband";
+
+/* Class = "UILabel"; text = "手机号"; ObjectID = "TIO-GP-fH3"; */
+"TIO-GP-fH3.text" = "手机号";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "Uut-AN-vyq"; */
+"Uut-AN-vyq.title" = "取消";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "Wp4-et-Q3u"; */
+"Wp4-et-Q3u.normalTitle" = "注册";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "eeR-Lr-byu"; */
+"eeR-Lr-byu.normalTitle" = "登录";
+
+/* Class = "UILabel"; text = "等待59s"; ObjectID = "f98-MB-zIV"; */
+"f98-MB-zIV.text" = "等待59s";
+
+/* Class = "UILabel"; text = "等待59s"; ObjectID = "hdU-KQ-DNx"; */
+"hdU-KQ-DNx.text" = "等待59s";
+
+/* Class = "UINavigationItem"; title = "注册帐号"; ObjectID = "qZX-dW-6lH"; */
+"qZX-dW-6lH.title" = "注册帐号";
+
+/* Class = "UILabel"; text = "用户名"; ObjectID = "u5F-1z-6E8"; */
+"u5F-1z-6E8.text" = "用户名";
+
+/* Class = "UITextField"; placeholder = "请填写用户名"; ObjectID = "uOF-0l-Dfx"; */
+"uOF-0l-Dfx.placeholder" = "请填写用户名";
+
+/* Class = "UINavigationItem"; title = "CreateBand"; ObjectID = "xZv-8e-Wym"; */
+"xZv-8e-Wym.title" = "CreateBand";
+
+/* Class = "UITextField"; placeholder = "请输入验证码"; ObjectID = "y7H-kL-yJk"; */
+"y7H-kL-yJk.placeholder" = "请输入验证码";

@@ -14,6 +14,7 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     struct Constant {
         static let LoginViewControllerIdentifier = "LoginViewController"
+        static let ShowCompleteAccountInfoSegueIdentifier = "Show Complete Account Info"
     }
     
     @IBOutlet weak var mapView: MKMapView! {
@@ -85,6 +86,19 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             mapView.setCenterCoordinate(coord.coordinate, animated: true)
         }
     }
+    
+    // 组队
+    @IBAction func createBand(sender: UIButton) {
+        if UserManager.sharedInstance.isCompleteInfo {
+            // TODO: 跳转组队界面
+        } else {
+            alerViewShow("资料不全", andMessage:"请先完善个人信息" , andHandler: { (action) in
+                self.performSegueWithIdentifier(Constant.ShowCompleteAccountInfoSegueIdentifier, sender: nil)
+            })
+        }
+        
+    }
+    
     
     
     // MARK: Custom Methods 

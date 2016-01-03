@@ -36,8 +36,12 @@ extension UIViewController {
     }
     
     func alertViewShow(title:String, andMessage message: String) {
+        alerViewShow(title, andMessage: message, andHandler: nil)
+    }
+    
+    func alerViewShow(title:String, andMessage message: String, andHandler handler: ((UIAlertAction) -> Void)?) {
         let alertController = UIAlertController.init(title: title, message: message, preferredStyle: .Alert)
-        let actionCancel = UIAlertAction.init(title: "确定", style: .Cancel, handler: nil)
+        let actionCancel = UIAlertAction.init(title: "确定", style: .Cancel, handler: handler)
         alertController.addAction(actionCancel)
         self.presentViewController(alertController, animated: true, completion: nil)
     }

@@ -11,8 +11,8 @@ import Foundation
 
 let CreatebandUserId = "CreatebandUserId"
 
-enum UserType {
-    case School
+enum UserType: Int {
+    case School = 0
     case Freelance
 }
 
@@ -32,6 +32,37 @@ enum MusicStyle: Int {
     case Jpop
     case Gothic
     case Light
+}
+
+enum UserRole: Int {
+    case LeadGuitar = 0
+    case RhythmGuitar
+    case Drummer
+    case Bassist
+    case LeadVocalist
+    case Keyboardist
+    case Turntablist
+    
+    func simpleDescription() -> String {
+        switch self {
+        case .LeadGuitar:
+            return "主音吉他手"
+        case .RhythmGuitar:
+            return "节奏吉他手"
+        case .Drummer:
+            return "鼓手"
+        case .Bassist:
+            return "贝斯手"
+        case .Keyboardist:
+            return "键盘手"
+        case .Turntablist:
+            return "调音师"
+        case .LeadVocalist:
+            return "主唱"
+        }
+    }
+    
+    static let allValues = [LeadGuitar,RhythmGuitar,Drummer,Bassist,LeadVocalist,Keyboardist,Turntablist]
 }
 
 class UserManager {
@@ -74,6 +105,9 @@ class UserManager {
     }
     
     var headImage: String?
+    
+    // TODO: 需要后端建表
+    var isCompleteInfo = false
 }
 
 

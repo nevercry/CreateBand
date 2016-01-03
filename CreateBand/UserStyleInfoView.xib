@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserStyleInfoViewController" customModule="CreateBand" customModuleProvider="target">
+            <connections>
+                <outlet property="typeSegment" destination="Ya8-6m-Q93" id="uk3-Ix-lhg"/>
+                <outlet property="view" destination="iN0-l3-epB" id="J8m-2C-iXX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iG3-Cu-cAT">
+                    <rect key="frame" x="20" y="20" width="560" height="300"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="属性设置：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F61-Pw-dsl">
+                            <rect key="frame" x="8" y="10" width="544" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u2H-4b-UPW">
+                            <rect key="frame" x="8" y="41" width="544" height="44"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="760" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ya8-6m-Q93">
+                                    <rect key="frame" x="20" y="8" width="504" height="29"/>
+                                    <segments>
+                                        <segment title="校园乐手"/>
+                                        <segment title="自由乐手"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="selectUserType:" destination="-1" eventType="valueChanged" id="idL-Lc-AIp"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择风格：（最多选择3项）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dke-ac-laQ">
+                            <rect key="frame" x="8" y="95" width="544" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lnH-ZJ-tTN">
+                            <rect key="frame" x="8" y="126" width="544" height="166"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="osl-p7-LPz">
+                                    <rect key="frame" x="20" y="8" width="126" height="150"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjp-9T-9K4">
+                                            <rect key="frame" x="48" y="0.0" width="30" height="30"/>
+                                            <state key="normal" title="流行"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="Q84-tw-CZq"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGd-xp-MHM">
+                                            <rect key="frame" x="48" y="40" width="30" height="30"/>
+                                            <state key="normal" title="金属"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="dby-YU-8q4"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtP-Uf-Asg">
+                                            <rect key="frame" x="48" y="80" width="30" height="30"/>
+                                            <state key="normal" title="后摇"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="QVu-wz-SkP"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pG-Ki-JUW">
+                                            <rect key="frame" x="42" y="120" width="42" height="30"/>
+                                            <state key="normal" title="J-Pop"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="5Ia-4d-3VH"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2OP-Uq-fW2">
+                                    <rect key="frame" x="146" y="8" width="126" height="150"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvJ-sX-Hdt">
+                                            <rect key="frame" x="48" y="0.0" width="30" height="30"/>
+                                            <state key="normal" title="摇滚"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="PYe-5E-jdm"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5a-5q-nR2">
+                                            <rect key="frame" x="48" y="40" width="30" height="30"/>
+                                            <state key="normal" title="硬核"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="6w0-H8-hU6"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfZ-cN-0KA">
+                                            <rect key="frame" x="48" y="80" width="30" height="30"/>
+                                            <state key="normal" title="雷鬼"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="PGf-66-IIg"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ea5-nS-F2X">
+                                            <rect key="frame" x="48" y="120" width="30" height="30"/>
+                                            <state key="normal" title="哥特"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="ifb-Eu-zba"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hlv-Ka-1Ko">
+                                    <rect key="frame" x="272" y="8" width="126" height="150"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghi-pt-1FK">
+                                            <rect key="frame" x="48" y="0.0" width="30" height="30"/>
+                                            <state key="normal" title="民谣"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="frB-D5-0A6"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqG-UL-K9h">
+                                            <rect key="frame" x="48" y="40" width="30" height="30"/>
+                                            <state key="normal" title="英伦"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="8pF-5G-Cxh"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfa-ca-C0E">
+                                            <rect key="frame" x="48" y="80" width="30" height="30"/>
+                                            <state key="normal" title="爵士"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="0Js-gm-jd3"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObH-mS-70X">
+                                            <rect key="frame" x="41" y="120" width="45" height="30"/>
+                                            <state key="normal" title="轻音乐"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="5QZ-09-21x"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZDk-ul-Cir">
+                                    <rect key="frame" x="398" y="8" width="126" height="110"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R67-YX-cy6">
+                                            <rect key="frame" x="48" y="0.0" width="30" height="30"/>
+                                            <state key="normal" title="朋克"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="gMc-Wp-7Rf"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK6-Y5-ZXa">
+                                            <rect key="frame" x="41" y="40" width="45" height="30"/>
+                                            <state key="normal" title="布鲁斯"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="Bnv-t6-gTd"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVH-Q2-6ob">
+                                            <rect key="frame" x="48" y="80" width="30" height="30"/>
+                                            <state key="normal" title="说唱"/>
+                                            <connections>
+                                                <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="SBC-mx-fZJ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                        </stackView>
+                    </subviews>
+                    <edgeInsets key="layoutMargins" top="10" left="8" bottom="8" right="8"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="iG3-Cu-cAT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" symbolic="YES" id="8uw-Ta-IQD"/>
+                <constraint firstAttribute="trailing" secondItem="iG3-Cu-cAT" secondAttribute="trailing" constant="20" symbolic="YES" id="bq6-f0-uiu"/>
+                <constraint firstItem="iG3-Cu-cAT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="o4h-m9-Qrg"/>
+            </constraints>
+            <point key="canvasLocation" x="504" y="480"/>
+        </view>
+    </objects>
+</document>
