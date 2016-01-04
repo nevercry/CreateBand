@@ -21,6 +21,7 @@
 		4A4505F71C3153E200531365 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4505F61C3153E200531365 /* AccountInfoViewController.swift */; };
 		4A4505F91C36A26200531365 /* UserStyleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4505F81C36A26200531365 /* UserStyleInfoViewController.swift */; };
 		4A4505FB1C38DBBB00531365 /* UserStyleInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4505FA1C38DBBB00531365 /* UserStyleInfoView.xib */; };
+		4A4505FF1C3ACD9D00531365 /* CreatebandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4505FE1C3ACD9D00531365 /* CreatebandViewController.swift */; };
 		4AA7CB811C0DF5DC00B35E25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */; };
 		4AA7CB861C0DF5DC00B35E25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB841C0DF5DC00B35E25 /* Main.storyboard */; };
 		4AA7CB881C0DF5DC00B35E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA7CB871C0DF5DC00B35E25 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		4A4505FA1C38DBBB00531365 /* UserStyleInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserStyleInfoView.xib; sourceTree = "<group>"; };
 		4A4505FC1C38F96F00531365 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		4A4505FD1C38F96F00531365 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		4A4505FE1C3ACD9D00531365 /* CreatebandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatebandViewController.swift; sourceTree = "<group>"; };
 		4AA7CB7D1C0DF5DC00B35E25 /* CreateBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreateBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA7CB801C0DF5DC00B35E25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AA7CB851C0DF5DC00B35E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				4A4505F61C3153E200531365 /* AccountInfoViewController.swift */,
 				4A4505F81C36A26200531365 /* UserStyleInfoViewController.swift */,
 				4A4505FA1C38DBBB00531365 /* UserStyleInfoView.xib */,
+				4A4505FE1C3ACD9D00531365 /* CreatebandViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB65E831C26C9B700561CB9 /* NetworkManager.swift in Sources */,
+				4A4505FF1C3ACD9D00531365 /* CreatebandViewController.swift in Sources */,
 				4AF0F1DF1C2D47D90076BC56 /* HelpMethods.swift in Sources */,
 				4A2333251C25234000FF2311 /* UserManager.swift in Sources */,
 				4A4505F51C31362200531365 /* CustomAnnotation.swift in Sources */,
